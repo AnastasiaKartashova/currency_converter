@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block title %}currency{% endblock %}
+{% block content %}
+
+    <div class="container">
+            <div class="row d-flex justify-content-left">
+                <div class="col-md-6">
+                    <h2>Currency Converter</h2>
+                    <form method="post" action="{% url 'currency' %}">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                    </div>
+                    <br>
+                    <div class="select-submit">
+                        <input type="submit" class="btn btn-success" value="Convert">
+                    </div>
+                    <div class="row">
+                        <h2>{{ result }}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </form>
+{% endblock %}
+
